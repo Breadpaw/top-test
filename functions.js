@@ -144,3 +144,5 @@ function analyzeArray(array){
 
 	// return {average:average, min:lowestValue, max:highestValue, length:length};
 }
+
+export { capitalize, reverseString, calculator, Cypher, analyzeArray };
