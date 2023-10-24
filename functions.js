@@ -112,4 +112,35 @@ function stringToArray(string) {
     return stringArray;
 }
 
-export { capitalize, reverseString, calculator, Cypher };
+function analyzeArray(array){
+
+	// average
+	
+	const totalValue = array.reduce((previousValue, currentvalue) => previousValue+currentvalue);
+	console.log(totalValue);
+	const average = totalValue/array.length;
+
+	//min
+	const lowestValue = array.reduce((previousValue, currentValue) => {
+		if (previousValue < currentValue) {
+			return previousValue
+		} else {
+			return currentValue
+		}
+	})
+
+	//max
+	const highestValue = array.reduce((previousValue, currentValue) => {
+		if (previousValue > currentValue) {
+			return previousValue
+		} else {
+			return currentValue
+		}
+	})
+
+	//length
+
+	const length = array.length
+
+	// return {average:average, min:lowestValue, max:highestValue, length:length};
+}
