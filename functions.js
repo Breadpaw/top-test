@@ -15,7 +15,7 @@ function capitalize(word){
         }
     }
 
-    capitalizedWord = wordArray.join('');
+    const capitalizedWord = wordArray.join('');
 
     return capitalizedWord;
 }
