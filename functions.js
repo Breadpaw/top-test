@@ -1,3 +1,5 @@
+"use strict"
+
 function capitalize(word){
 
     let wordArray = [];
@@ -18,4 +20,6 @@ function capitalize(word){
     return capitalizedWord;
 }
 
-module.exports = capitalize;
+// module.exports = capitalize;
+
+export {capitalize}
