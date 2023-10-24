@@ -63,7 +63,12 @@ class Cypher {
 
 	decypher(string, shift) {
 		
-		// return
+		this.string = string;
+		this.shift = -shift;
+		
+		let newString = this.#constructNewString();
+
+		return newString;
 	}
 
 	// Private Functions
