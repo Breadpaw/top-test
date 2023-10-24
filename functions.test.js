@@ -29,3 +29,10 @@ test('Calculator: multiply', () => {
 test('Calculator: divide', () => {
     expect(calculator.divide(6,4)).toBeCloseTo(1.5);
 })
+
+// Cypher
+
+test('Cypher: Encypher', () => {
+    const c = new Cypher();
+    expect(c.encypher('abcz',3)).toMatch('defc');
+})
