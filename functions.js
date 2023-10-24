@@ -19,20 +19,25 @@ function capitalize(word) {
 }
 
 function reverseString(string) {
-	let stringArray = [];
 
-	for (let i = 0; i < string.length; i++) {
-		const letter = string[i];
-
-		stringArray.push(letter);
-	}
+	let stringArray = stringToArray(string)
 
 	stringArray.reverse(); // array is altered.
 
 	const reversedString = stringArray.join('');
-    return reversedString;
+	return reversedString;
 }
 
 // module.exports = capitalize;
 
-export { capitalize, reverseString };
+export { capitalize, reverseString, calculator };
+
+function stringToArray(string) {
+	let stringArray = [];
+
+	for (let i = 0; i < string.length; i++) {
+		const symbol = string[i];
+		stringArray.push(symbol);
+	}
+    return stringArray;
+}
