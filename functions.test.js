@@ -1,4 +1,4 @@
-import { capitalize, reverseString, calculator, Cypher } from './functions';
+import { capitalize, reverseString, calculator, Cypher, analyzeArray } from './functions';
 
 // Capitalize String
 
