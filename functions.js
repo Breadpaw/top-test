@@ -1,25 +1,38 @@
-"use strict"
+'use strict';
 
-function capitalize(word){
+function capitalize(word) {
+	let wordArray = [];
 
-    let wordArray = [];
+	for (let i = 0; i < word.length; i++) {
+		const letter = word[i];
 
-    for (let i = 0; i < word.length; i++) {
-        const letter = word[i];
+		if (i === 0) {
+			wordArray.push(letter.toUpperCase());
+		} else {
+			wordArray.push(letter);
+		}
+	}
 
-        if(i === 0){
-            wordArray.push(letter.toUpperCase());
-        } else {
+	const capitalizedWord = wordArray.join('');
 
-        wordArray.push(letter);
-        }
-    }
+	return capitalizedWord;
+}
 
-    const capitalizedWord = wordArray.join('');
+function reverseString(string) {
+	let stringArray = [];
 
-    return capitalizedWord;
+	for (let i = 0; i < string.length; i++) {
+		const letter = string[i];
+
+		stringArray.push(letter);
+	}
+
+	stringArray.reverse(); // array is altered.
+
+	const reversedString = stringArray.join('');
+    return reversedString;
 }
 
 // module.exports = capitalize;
 
-export {capitalize}
+export { capitalize, reverseString };
