@@ -14,18 +14,18 @@ test('String: Reverse string', () => {
 
 // Calculator
 
-test('Calculator: add function', () => {
+test('Calculator: add', () => {
     expect(calculator.add(2,3)).toEqual(5);
 })
 
-test('Calculator: subtract function', () => {
+test('Calculator: subtract', () => {
     expect(calculator.subtract(10,3)).toEqual(7);
 })
 
-test('Calculator: multiply function', () => {
+test('Calculator: multiply', () => {
     expect(calculator.multiply(3,7)).toEqual(21);
 })
 
-test('Calculator: divide function', () => {
+test('Calculator: divide', () => {
     expect(calculator.divide(6,4)).toBeCloseTo(1.5);
 })
