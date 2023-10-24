@@ -106,3 +106,5 @@ function stringToArray(string) {
 	}
     return stringArray;
 }
+
+export { capitalize, reverseString, calculator, Cypher };
