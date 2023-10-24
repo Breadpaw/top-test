@@ -28,6 +28,24 @@ function reverseString(string) {
 	return reversedString;
 }
 
+const calculator = {
+	add(a, b) {
+		return a + b;
+	},
+	subtract(a, b) {
+		return a - b;
+	},
+	multiply(a, b) {
+		return a * b;
+	},
+	divide(a, b) {
+		return a / b;
+	},
+};
+
+const cypher = {
+	alphabet: 'abcdefghijklmnopqrstuvwxyz',
+};
 // module.exports = capitalize;
 
 export { capitalize, reverseString, calculator };
