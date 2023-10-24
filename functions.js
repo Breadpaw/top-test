@@ -19,8 +19,7 @@ function capitalize(word) {
 }
 
 function reverseString(string) {
-
-	let stringArray = stringToArray(string)
+	let stringArray = stringToArray(string);
 
 	stringArray.reverse(); // array is altered.
 
@@ -43,16 +42,14 @@ const calculator = {
 	},
 };
 
-
 class Cypher {
-	constructor(){
+	constructor() {
 		this.alphabetArray = stringToArray('abcdefghijklmnopqrstuvwxyz'); // store alphabet array for reference
 	}
 
 	// Public Functions
 
 	encypher(string, shift) {
-		
 		this.string = string;
 		this.shift = shift;
 
@@ -62,10 +59,9 @@ class Cypher {
 	}
 
 	decypher(string, shift) {
-		
 		this.string = string;
 		this.shift = -shift;
-		
+
 		let newString = this.#constructNewString();
 
 		return newString;
@@ -73,29 +69,39 @@ class Cypher {
 
 	// Private Functions
 
-	#lookUpShiftedSymbol(symbol){
-		if(!symbol.match(/[a-z]/i)){
+	#lookUpShiftedSymbol(symbol) {
+		const upperCase = symbol.match(/[A-Z]/) ? true : false;
+
+		if (!symbol.match(/[a-z]/i)) {
 			return symbol;
 		} else {
-			const index = this.alphabetArray.indexOf(symbol)
-			let shiftedIndex = index + this.shift
+			// change to lower case when searching in lower case array
+			const index = this.alphabetArray.indexOf(symbol.toLowerCase());
+			let shiftedIndex = index + this.shift;
 
 			// in case index surpasses alphabet length, start at beginning
-			if(shiftedIndex > 26) {
+			if (shiftedIndex > 26) {
 				shiftedIndex -= 26;
 			} else if (shiftedIndex < 0) {
 				shiftedIndex += 26;
 			}
-			return this.alphabetArray[shiftedIndex];
+
+			const shiftedSymbol = this.alphabetArray[shiftedIndex];
+
+			if (upperCase) {
+				return shiftedSymbol.toUpperCase();
+			} else {
+				return shiftedSymbol;
+			}
 		}
 	}
 
-	#constructNewString(){
-		const originalStringArray = stringToArray(this.string)
+	#constructNewString() {
+		const originalStringArray = stringToArray(this.string);
 		let encypheredStringArray = [];
 
 		for (let i = 0; i < this.string.length; i++) {
-			encypheredStringArray.push(this.#lookUpShiftedSymbol(this.string[i]))
+			encypheredStringArray.push(this.#lookUpShiftedSymbol(this.string[i]));
 		}
 
 		return encypheredStringArray.join('');
@@ -109,40 +115,45 @@ function stringToArray(string) {
 		const symbol = string[i];
 		stringArray.push(symbol);
 	}
-    return stringArray;
+	return stringArray;
 }
 
-function analyzeArray(array){
-
+function analyzeArray(array) {
 	// average
-	
-	const totalValue = array.reduce((previousValue, currentvalue) => previousValue+currentvalue);
-	console.log(totalValue);
-	const average = totalValue/array.length;
+
+	const totalValue = array.reduce(
+		(previousValue, currentvalue) => previousValue + currentvalue
+	);
+	const average = totalValue / array.length;
 
 	//min
 	const lowestValue = array.reduce((previousValue, currentValue) => {
 		if (previousValue < currentValue) {
-			return previousValue
+			return previousValue;
 		} else {
-			return currentValue
+			return currentValue;
 		}
-	})
+	});
 
 	//max
 	const highestValue = array.reduce((previousValue, currentValue) => {
 		if (previousValue > currentValue) {
-			return previousValue
+			return previousValue;
 		} else {
-			return currentValue
+			return currentValue;
 		}
-	})
+	});
 
 	//length
 
-	const length = array.length
+	const length = array.length;
 
-	// return {average:average, min:lowestValue, max:highestValue, length:length};
+	return {
+		average: average,
+		min: lowestValue,
+		max: highestValue,
+		length: length,
+	};
 }
 
 export { capitalize, reverseString, calculator, Cypher, analyzeArray };
