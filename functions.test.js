@@ -1,4 +1,10 @@
-import { capitalize, reverseString, calculator, Cypher, analyzeArray } from './functions';
+import {
+	capitalize,
+	reverseString,
+	calculator,
+	Cypher,
+	analyzeArray,
+} from './functions';
 
 // Capitalize String
 
@@ -42,4 +48,11 @@ test('Cypher: Decypher', () => {
 	expect(c.decypher('mn pnrc rb pnvxutnw', 9)).toMatch('de geit is gemolken');
 });
 
-test
+test('AnalyzeArray', () => {
+	expect(analyzeArray([1, 8, 3, 4, 2, 6])).toEqual({
+		average: 4,
+		min: 1,
+		max: 8,
+		length: 6,
+	});
+});
