@@ -38,14 +38,14 @@ test('Calculator: divide', () => {
 
 // Cypher
 
-test('Cypher: Encypher', () => {
+test('Cypher: Encypher. Case sensitive, A-Z wrap, interpunction', () => {
 	const c = new Cypher();
-	expect(c.encypher('attack at dawn', 5)).toMatch('fyyfhp fy ifbs');
+	expect(c.encypher('We ride at dawn!', 5)).toMatch('Bj wnij fy ifbs!');
 });
 
-test('Cypher: Decypher', () => {
+test('Cypher: Decypher. Case sensitive, A-Z wrap, interpunction', () => {
 	const c = new Cypher();
-	expect(c.decypher('mn pnrc rb pnvxutnw', 9)).toMatch('de geit is gemolken');
+	expect(c.decypher('Mn pnrc rb pnvxutnw!;', 9)).toMatch('De geit is gemolken!;');
 });
 
 test('AnalyzeArray', () => {
