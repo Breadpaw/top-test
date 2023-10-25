@@ -56,3 +56,5 @@ test('AnalyzeArray', () => {
 		length: 6,
 	});
 });
+
+// write test for string to array
