@@ -4,6 +4,7 @@ import {
 	calculator,
 	Cypher,
 	analyzeArray,
+	stringToArray,
 } from './functions';
 
 // Capitalize String
@@ -55,6 +56,10 @@ test('AnalyzeArray', () => {
 		max: 8,
 		length: 6,
 	});
+});
+
+test('String to array helper method', () => {
+	expect(stringToArray('Wouter?%\'')).toEqual(['W','o','u','t','e','r','?','%','\'']);
 });
 
 // write test for string to array
