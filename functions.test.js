@@ -61,5 +61,3 @@ test('AnalyzeArray', () => {
 test('String to array helper method', () => {
 	expect(stringToArray('Wouter?%\'')).toEqual(['W','o','u','t','e','r','?','%','\'']);
 });
-
-// write test for string to array

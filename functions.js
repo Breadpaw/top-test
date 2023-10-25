@@ -156,4 +156,4 @@ function analyzeArray(array) {
 	};
 }
 
-export { capitalize, reverseString, calculator, Cypher, analyzeArray };
+export { capitalize, reverseString, calculator, Cypher, analyzeArray, stringToArray };
