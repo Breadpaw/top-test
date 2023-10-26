@@ -41,12 +41,16 @@ test('Calculator: divide', () => {
 
 test('Cypher: Encypher. Case sensitive, A-Z wrap, interpunction', () => {
 	const c = new Cypher();
-	expect(c.encypher('We ride at dawn, bitches!', 5)).toMatch('Bj wnij fy ifbs, gnyhmjx!');
+	expect(c.encypher('We ride at dawn!', 5)).toMatch(
+		'Bj wnij fy ifbs!'
+	);
 });
 
 test('Cypher: Decypher. Case sensitive, A-Z wrap, interpunction', () => {
 	const c = new Cypher();
-	expect(c.decypher('Mn pnrc rb pnvxutnw!;', 9)).toMatch('De geit is gemolken!;');
+	expect(c.decypher('Mn pnrc rb pnvxutnw!;', 9)).toMatch(
+		'De geit is gemolken!;'
+	);
 });
 
 test('AnalyzeArray', () => {
@@ -59,5 +63,15 @@ test('AnalyzeArray', () => {
 });
 
 test('String to array helper method', () => {
-	expect(stringToArray('Wouter?%\'')).toEqual(['W','o','u','t','e','r','?','%','\'']);
+	expect(stringToArray("Wouter?%'")).toEqual([
+		'W',
+		'o',
+		'u',
+		't',
+		'e',
+		'r',
+		'?',
+		'%',
+		"'",
+	]);
 });
